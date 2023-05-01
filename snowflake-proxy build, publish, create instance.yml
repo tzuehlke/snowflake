@@ -1,0 +1,59 @@
+# Variable 'githubdisplayname' was defined in the Variables tab
+# Variable 'githubmail' was defined in the Variables tab
+# Variable 'githubname' was defined in the Variables tab
+# Variable 'githubtoken' was defined in the Variables tab
+# Cron Schedules have been converted using UTC Time Zone and may need to be updated for your location
+schedules:
+- cron: 10 18 * * 1,5
+  branches:
+    include:
+    - refs/heads/main
+  always: true
+name: $(Date:yyyyMMdd)$(Rev:.r)
+resources:
+  repositories:
+  - repository: self
+    type: git
+    ref: refs/heads/main
+jobs:
+- job: Job_1
+  displayName: Agent job 1
+  timeoutInMinutes: 10
+  pool:
+    vmImage: ubuntu-latest
+  steps:
+  - checkout: self
+    clean: true
+    fetchTags: false
+  - task: Docker@2
+    displayName: build image and push to docker hub
+    inputs:
+      containerRegistry: 29e9a8c1-fb1e-43a1-9502-a98b476741b5
+      repository: tzuehlke/snowflake
+      tags: >-
+        latest
+
+        $(Build.BuildNumber)
+  - task: AzureCLI@2
+    displayName: Delete CI
+    inputs:
+      connectedServiceNameARM: 9358d465-747c-4fca-a0f3-618315cfa7dc
+      scriptType: pscore
+      scriptLocation: inlineScript
+      inlineScript: az container delete --name "snowflake-proxy" --resource-group "rg-snowflake" --yes
+      powerShellErrorActionPreference: silentlyContinue
+  - task: AzureCLI@2
+    displayName: Create CI from docker hub
+    inputs:
+      connectedServiceNameARM: 9358d465-747c-4fca-a0f3-618315cfa7dc
+      scriptType: pscore
+      scriptLocation: inlineScript
+      inlineScript: az container create -g "rg-snowflake" --name "snowflake-proxy" --image tzuehlke/snowflake:latest
+      powerShellErrorActionPreference: silentlyContinue
+  - task: PowerShell@2
+    displayName: 'PS Copy and Push Code '
+    inputs:
+      targetType: inline
+      script: "cd $(Agent.BuildDirectory)\nrm -rf snowflake/\n#ls -la\ngit config --global user.name $(githubdisplayname)\ngit config --global user.email $(githubmail) \ngit clone https://$(githubname):$(githubtoken)@github.com/tzuehlke/snowflake.git\n#ls -la\ncd snowflake\n#ls -la\ncd ..\ncd s\nren README.md README_snowflake.md\n#ls -la\ncopy * $(Agent.BuildDirectory)/snowflake/\ncd ../snowflake\nls -la\ngit add -A\ngit commit --allow-empty -m \"update $(Build.BuildNumber)\"\ngit push --force"
+      errorActionPreference: silentlyContinue
+...
