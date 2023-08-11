@@ -7,3 +7,9 @@ services:
         container_name: snowflake-proxy
         restart: unless-stopped
         #command: [ "-ephemeral-ports-range", "30000:60000" ]
+    watchtower:
+        image: containrrr/watchtower
+        container_name: watchtower
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock
+        command: snowflake-proxy
