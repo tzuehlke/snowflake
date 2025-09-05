@@ -14,7 +14,7 @@ require (
 	github.com/pion/sdp/v3 v3.0.15
 	github.com/pion/stun/v3 v3.0.0
 	github.com/pion/transport/v3 v3.0.7
-	github.com/pion/webrtc/v4 v4.1.2
+	github.com/pion/webrtc/v4 v4.1.4
 	github.com/prometheus/client_golang v1.22.0
 	github.com/realclientip/realclientip-go v1.0.0
 	github.com/refraction-networking/utls v1.6.7
@@ -26,8 +26,8 @@ require (
 	gitlab.torproject.org/tpo/anti-censorship/geoip v0.0.0-20210928150955-7ce4b3d98d01
 	gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/goptlib v1.6.0
 	gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/ptutil v0.0.0-20250815012447-418f76dcf315
-	golang.org/x/crypto v0.36.0
-	golang.org/x/net v0.38.0
+	golang.org/x/crypto v0.41.0
+	golang.org/x/net v0.42.0
 	golang.org/x/sys v0.35.0
 )
 
@@ -56,16 +56,16 @@ require (
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
 	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
 	github.com/pion/datachannel v1.5.10 // indirect
-	github.com/pion/dtls/v3 v3.0.6 // indirect
+	github.com/pion/dtls/v3 v3.0.7 // indirect
 	github.com/pion/interceptor v0.1.40 // indirect
-	github.com/pion/logging v0.2.3 // indirect
+	github.com/pion/logging v0.2.4 // indirect
 	github.com/pion/mdns/v2 v2.0.7 // indirect
 	github.com/pion/randutil v0.1.0 // indirect
 	github.com/pion/rtcp v1.2.15 // indirect
-	github.com/pion/rtp v1.8.18 // indirect
+	github.com/pion/rtp v1.8.21 // indirect
 	github.com/pion/sctp v1.8.39 // indirect
-	github.com/pion/srtp/v3 v3.0.5 // indirect
-	github.com/pion/turn/v4 v4.0.0 // indirect
+	github.com/pion/srtp/v3 v3.0.7 // indirect
+	github.com/pion/turn/v4 v4.1.1 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/prometheus/client_model v0.6.1 // indirect
@@ -77,10 +77,10 @@ require (
 	github.com/tjfoc/gmsm v1.4.1 // indirect
 	github.com/txthinking/runnergroup v0.0.0-20210608031112-152c7c4432bf // indirect
 	github.com/wlynxg/anet v0.0.5 // indirect
-	golang.org/x/mod v0.23.0 // indirect
-	golang.org/x/sync v0.12.0 // indirect
-	golang.org/x/text v0.23.0 // indirect
-	golang.org/x/tools v0.30.0 // indirect
+	golang.org/x/mod v0.26.0 // indirect
+	golang.org/x/sync v0.16.0 // indirect
+	golang.org/x/text v0.28.0 // indirect
+	golang.org/x/tools v0.35.0 // indirect
 	google.golang.org/protobuf v1.36.5 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
