@@ -8,7 +8,7 @@ services:
         # https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/tree/main/proxy?ref_type=heads#running-a-standalone-snowflake-proxy
         #command: [ "-ephemeral-ports-range", "30000:60000" ]
     watchtower:
-        image: containrrr/watchtower
+        image: nickfedor/watchtower
         container_name: watchtower
         volumes:
           - /var/run/docker.sock:/var/run/docker.sock
