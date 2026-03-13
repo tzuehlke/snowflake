@@ -1,3 +1,53 @@
+Changes in version v2.12.1 - 2026-03-10
+- Fix release pipeline
+
+Changes in version v2.12.0 - 2026-03-10
+- Issue 40524: Disable periodic proxy stats if SummaryInterval is 0
+- Update proxy README with v2.11.0 usage
+- Issue 40510: Set country code to ?? if geoip returns false in proxy
+- Issue 40505: Update image path to use nickfedor fork of watchtower
+- Update pion stack with security fix and performance increase
+- Bump version of Go for android CI tests
+- Issue 40014: Add covert-dtls to proxy and client
+- Respect the error before closing the WebSocket connection
+- Update utls version with cherry-picked chrome120 fix
+- Issue 40504: Have proxy poll only if default relay is reachable
+- Issue 40503: Refrain from logging SQS cleanup error
+- Issue 40499: Add automated binary release support
+- Issue 40498: Add support for multiple SQS channels
+- Issue 40494: Add back proxy churn measurement option at broker
+- Issue 40290: Update proxy README with min required Go version
+- Issue 40447: Add prometheus metric for proxy answer counts
+- Remove dependency proxy to use automatic mirror
+- Issue 40483: Update kcp-go to v5.6.24
+- Replace utls with patch version with backport for tls downgrade fix
+- Update ptutil to fix race condition in safeprom
+- Bump minimum supported go version to 1.23.0
+- Issue 40472: Clear map of seen proxy IP addresses
+- Remove s390x from container building targets
+- Bin broker country stats before sorting, not after
+- Refactor displayCountryStats at broker
+- Issue 40474: Pull client IP from SDP for AMP cache rendezvous
+- Update snowflake proxy image to use most recent golang and geodb
+- Issue 40470: Increment prometheus proxy_total count once per IP
+- Add clarification to broker-spec on client-*-ips
+- Issue 40468: Fix missing labels in Docker image
+- Issue 40458: Simplify broker metrics and remove mutexes
+- Add client-snowflake-timeout-count to broker spec
+- Update README to include all the maintained Snowflake bridge lines
+- Issue 40462: CI: fix invalid group name by removing trail slash
+- Add updated docker compose file
+- CI: Use parent group as namespace for dependency proxy
+- Issue 40456: Bump version of shadow for CI tests
+- Issue 40457: Fix shadow and tgen cache in .gitlab-ci.yml
+- Issue 40454: Remove broker log messages for invalid SDP and SQS cleanup
+- Issue 40454: Remove default relay pattern option from broker
+- Issue 40454: Remove bad relay pattern log message at broker
+- Issue 40449: Add context with timeout for client requests
+- Issue 40363: Bump minimum version of Go to 1.22
+- Issue 40335: use dependency proxy for CI when available
+- Bump versions of dependencies
+
 Changes in version v2.11.0 - 2025-03-18
 - Fix data race warnings for tokens_t
 - Fix race condition in proxy connection count stats
