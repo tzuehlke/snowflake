@@ -1,5 +1,22 @@
+Changes in version v2.13.1 - 2026-03-10
+- Fix release pipeline to use Go 1.24
+
+Changes in version v2.13.0 - 2026-04-08
+- Issue 40530: Proxy: Set covertdtls config to randomizemimic by default
+- Issue 25598: Broker: Add pollInterval field to SnowflakePool struct
+- Issue 25598: Broker: Add NextPoll message to ProxyPollResponse
+- Update Go versions in CI tests
+- Update version of utls and remove backported fix
+- Broker: Modify RequestOffer to take a ProxyPoll
+- Broker: Consolidate pool logic to AssignPool function
+- Broker: Add SnowflakePool wrapper for SnowflakeHeap
+- Broker: Move prometheus metrics to ipc.go
+- Broker: Refactor Snowflake creation out of AddSnowflake
+- Broker: Rename snowflake heaps in code to reflect pool type
+- Standardize proxy poll functions in messages package
+
 Changes in version v2.12.1 - 2026-03-10
-- Fix release pipeline
+- Fix release pipeline to use Go 1.23
 
 Changes in version v2.12.0 - 2026-03-10
 - Issue 40524: Disable periodic proxy stats if SummaryInterval is 0
