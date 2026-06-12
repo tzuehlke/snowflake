@@ -1,3 +1,16 @@
+Changes in version v2.14.0 - 2026-06-09
+- Update covert-dtls and improve public API
+- Add none string flag to covert-dtls config
+- Broker: Rely on KnownProxyTypes for metrics
+- Issue 40534: Add bloco to map of KnownProxyTypes
+- Issue 40536: Proxy: Update when EventOnCurrentNATTypeDetermined fires
+- Broker: Represent pollInterval in ms as time.Duration
+- Broker: Load poll intervals from file
+- Broker: Fix potential nil-pointer dereference
+- Issue 40520: Report listen error in Metrics.Start
+- Issue 40538: Ensure self-reported client counts are 0 or greater
+- Issue 25598: Proxy: Adjust poll interval to honour NextPoll field from broker
+
 Changes in version v2.13.1 - 2026-03-10
 - Fix release pipeline to use Go 1.24
 
