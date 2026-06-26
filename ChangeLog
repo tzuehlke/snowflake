@@ -1,3 +1,7 @@
+Changes in version v2.14.1 - 2026-06-25
+- Probetest: Add SOCKS5 based interactive connectivity test
+- Issue 40546: Check type assertions and validate WebRTC offers and answers (discovered by Bogdan Barchuk and Alexander Kucher)
+
 Changes in version v2.14.0 - 2026-06-09
 - Update covert-dtls and improve public API
 - Add none string flag to covert-dtls config
