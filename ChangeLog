@@ -1,3 +1,24 @@
+Changes in version v2.15.1 - 2026-10-07
+- CI: Update generate_tarball image to use go v1.25
+
+Changes in version v2.15.0 - 2026-10-07
+- Probetest: Fixes to probetest readme
+- Issue 40550: Proxy: Update CLI help text for pollInterval
+- Issue 40550: Proxy: Update PollInterval and MinPollInterval documentation
+- Issue 40077: Add 3 type interactive connectivity type support for broker, client, and proxy
+- Issue 40506: Broker: Add rate limiting by IP for proxy polls
+- Update golang toolchain to v1.25
+- Issue 40515: Update description of outbound-address option
+- Issue 40544: Proxy: Count missing client IP as ?? in stats
+- Issue 40409: Make debian packages with goreleaser
+- Issue 40561: Client: Proxy: Probetest: Revert to SDP munging
+- Improve dependency caching for Docker
+- Issue 40564: Broker: Only trust "X-Forwarded-For" header for proxy IP
+- Issue 40380: Proxy: Add -interface option to use SetInterfaceFilter on outbound addrs
+- Issue 40554: Proxy: Only accept first opened datachannel
+- Issue 40563: Probetest: Only accept first opened datachannel
+- Updates to dependencies
+
 Changes in version v2.14.1 - 2026-06-25
 - Probetest: Add SOCKS5 based interactive connectivity test
 - Issue 40546: Check type assertions and validate WebRTC offers and answers (discovered by Bogdan Barchuk and Alexander Kucher)
