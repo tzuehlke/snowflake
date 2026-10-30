@@ -1,3 +1,7 @@
+Changes in version v2.15.3 - 2026-10-28
+- Issue 40553: Broker: fix proxy answer resource exhaustion vuln
+- Issue 40557: Proxy: Fix deadlock bug in fixed capacity proxies
+
 Changes in version v2.15.2 - 2026-10-20
 - Issue 40380: Proxy: Apply outbound address filter to srflx candidates
 - Fix file permissions on man files
